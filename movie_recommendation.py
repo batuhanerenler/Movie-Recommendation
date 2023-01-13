@@ -79,8 +79,7 @@ st.markdown(
        
         body {
             font-family: Arial, sans-serif;
-            background: rgb(2,0,36);
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 22%, rgba(0,212,255,1) 100%);
+            background: linear-gradient(to right, #000046, #1cb5e0);
             
         }
         h1, h2, h3, h4 {
