@@ -76,7 +76,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.markdown("<body style='background: linear-gradient(to right, #000046, #1cb5e0);'>", unsafe_allow_html=True)
+st.markdown("<body style='background-color: linear-gradient(to right, #000046, #1cb5e0);'>", unsafe_allow_html=True)
 
 st.title("Movie Recommendation System")
 
