@@ -76,7 +76,7 @@ st.set_page_config(
 )
 
 st.markdown(
-    """
+   
     <style>
     /* Add custom styles here */
     /* You can use CSS to change the appearance of your app */
@@ -115,7 +115,7 @@ st.markdown(
         color: white;
     }
     </style>
-    """
+    
 )
 
 st.title("Movie Recommendation System")
