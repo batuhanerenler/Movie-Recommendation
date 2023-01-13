@@ -46,9 +46,10 @@ def get_list(x):
         if len(names) > 3:
             names = names[:3]
         return names
+        
+    return []
 
-    #Return empty list in case of missing/mal
-return []
+ 
 
 # Define new director, cast, genres and keywords features that are in a suitable form.
 df2['director'] = df2['crew'].apply(get_director)
