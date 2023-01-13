@@ -76,7 +76,7 @@ st.set_page_config(
 )
 
 st.markdown(
-   
+   '''
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -110,7 +110,7 @@ st.markdown(
             background-color: #1f4287;
             color: white;
         }
-    </style>
+    </style>''', unsafe_allow_html=True
     
 )
 
