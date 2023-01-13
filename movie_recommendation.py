@@ -4,6 +4,11 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.expand_frame_repr', False)
+
 df1 = pd.read_csv('tmdb_5000_credits.csv')
 df2 = pd.read_csv('tmdb_5000_movies.csv')
 
@@ -64,7 +69,8 @@ def get_recommendations(title,cosine_sim=cosine_sim):
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:6]
     movie_indices = [i[0] for i in sim_scores]
-    return df2[['title', 'release_dates','director','runtime', 'original_language', 'vote_average','genres']].iloc[movie_indices]
+    last_df = df2[['title', 'release_dates','director','runtime', 'original_language', 'vote_average','genres']].iloc[movie_indices]
+    return last_df.
 # Add CSS styles
 st.set_page_config(
     page_title="Movie Recommendation System",
