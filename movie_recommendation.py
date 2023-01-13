@@ -10,6 +10,8 @@ def get_data_by_state():
 	df2 = pd.read_csv('tmdb_5000_movies.csv')
 	return df1,df2 
 
+get_data_by_state()
+
 # Merge and preprocess the data as you did in your previous code
 df1.columns = ['id','tittle','cast','crew']
 df2 = df2.merge(df1,on='id')
