@@ -64,7 +64,7 @@ def get_recommendations(title,cosine_sim=cosine_sim):
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:6]
     movie_indices = [i[0] for i in sim_scores]
-    return st.dataframe(df2[['title', 'release_dates','director','runtime', 'original_language', 'vote_average','genres']].iloc[movie_indices].style.hide_index())
+    return df2[['title', 'release_dates','director','runtime', 'original_language', 'vote_average','genres']].iloc[movie_indices]
 
 # Add CSS styles
 st.set_page_config(
