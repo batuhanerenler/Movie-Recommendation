@@ -78,42 +78,38 @@ st.set_page_config(
 st.markdown(
    
     <style>
-    /* Add custom styles here */
-    /* You can use CSS to change the appearance of your app */
-    /* For example, you can change the font, color, and size of text */
-    /* You can also add background colors, borders, and other styles */
-    body {
-        font-family: Arial, sans-serif;
-    }
-    h1, h2, h3, h4 {
-        color: #1f4287;
-    }
-    .stMarkdown h1 {
-        font-size: 2.5em;
-        margin: 0.5em 0;
-    }
-    .stMarkdown h2 {
-        font-size: 2em;
-        margin: 0.5em 0;
-    }
-    .stMarkdown h3 {
-        font-size: 1.5em;
-        margin: 0.5em 0;
-    }
-    .stMarkdown p {
-        font-size: 1.2em;
-        margin: 0.5em 0;
-    }
-    /* You can also add custom styles to specific elements */
-    /* For example, you can add a background color to the input field */
-    /* and change the color of the submit button */
-    .stTextInput {
-        background-color: #f2f2f2;
-    }
-    .stButton {
-        background-color: #1f4287;
-        color: white;
-    }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2, h3, h4 {
+            color: #1f4287;
+        }
+        .stMarkdown h1 {
+            font-size: 2.5em;
+            margin: 0.5em 0;
+        }
+        .stMarkdown h2 {
+            font-size: 2em;
+            margin: 0.5em 0;
+        }
+        .stMarkdown h3 {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+        .stMarkdown p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+        /* You can also add custom styles to specific elements */
+        /* For example, you can add a background color to the input field */
+        /* and change the color of the submit button */
+        .stTextInput {
+            background-color: #f2f2f2;
+        }
+        .stButton {
+            background-color: #1f4287;
+            color: white;
+        }
     </style>
     
 )
