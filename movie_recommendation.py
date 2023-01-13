@@ -4,9 +4,10 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-# Load in your datasets
-df1 = pd.read_csv('tmdb_5000_credits.csv')
-df2 = pd.read_csv('tmdb_5000_movies.csv')
+@st.cache  
+def get_data_by_state():
+	return df1 = pd.read_csv('tmdb_5000_credits.csv')
+    return df2 = pd.read_csv('tmdb_5000_movies.csv')
 
 # Merge and preprocess the data as you did in your previous code
 df1.columns = ['id','tittle','cast','crew']
