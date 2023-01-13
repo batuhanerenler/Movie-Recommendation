@@ -80,7 +80,7 @@ st.markdown(
        
         body {
             font-family: Arial, sans-serif;
-            background-color: linear-gradient(to right, #000046, #1cb5e0);
+            
             
         }
         h1, h2, h3, h4 {
