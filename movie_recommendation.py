@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
+from PIL import Image
 
 # Load in your datasets
 df1 = pd.read_csv('tmdb_5000_credits.csv')
@@ -46,8 +47,8 @@ def get_list(x):
             names = names[:3]
         return names
 
-    #Return empty list in case of missing/malformed data
-    return []
+    #Return empty list in case of missing/mal
+return []
 
 # Define new director, cast, genres and keywords features that are in a suitable form.
 df2['director'] = df2['crew'].apply(get_director)
@@ -55,16 +56,21 @@ df2['director'] = df2['crew'].apply(get_director)
 features = ['cast', 'keywords', 'genres']
 for feature in features:
     df2[feature] = df2[feature].apply(get_list)
-    # Define the recommendation function
     
-    
+# Define the recommendation function
 def get_recommendations(title,cosine_sim=cosine_sim):
     idx = indices[title]
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:6]
     movie_indices = [i[0] for i in sim_scores]
-    return df2[['title', 'release_dates','director','runtime', 'original_language', 'vote_average','genres']].iloc[movie_indices]
+    recommendations = []
+    for i in movie_indices:
+        recommendations.append({'title': df2.iloc[i]['title'],
+                               'release_date': df2.iloc[i]['release_date'],
+                               'director': df2.iloc[i]['director'],
+                               'poster': df2.iloc[i]['poster_path']})
+    return recommendations
 
 # Use Streamlit to create the UI
 st.title("Movie Recommendation System")
@@ -75,6 +81,11 @@ title = st.text_input("Enter the title of a movie:")
 # Show the recommendations
 if title:
     recommendations = get_recommendations(title)
-    st.dataframe(recommendations)
+    for movie in recommendations:
+        st.image(requests.get(f'https://image.tmdb.org/t/p/w500{movie["poster"]}').content,width=150)
+        st.write(f'Title: {movie["title"]}')
+        st.write(f'Release Date: {movie["release_date"]}')
+        st.write(f'Director: {movie["director"]}')
+        st.write("-----------------------------")
 else:
     st.write("Enter a movie title to get recommendations.")
