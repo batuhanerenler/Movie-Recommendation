@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
-from IPython.display import display, HTML
-display(HTML(df.to_html(index=False)))
 
 # Load in your datasets
 df1 = pd.read_csv('tmdb_5000_credits.csv')
