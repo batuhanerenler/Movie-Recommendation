@@ -4,6 +4,8 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
+st.markdown("<body style='background: linear-gradient(to right, #000046, #1cb5e0);'>", unsafe_allow_html=True)
+
 df1 = pd.read_csv('tmdb_5000_credits.csv')
 df2 = pd.read_csv('tmdb_5000_movies.csv')
 
@@ -72,48 +74,6 @@ st.set_page_config(
     page_icon=":movie_camera:",
     layout="wide",
     initial_sidebar_state="expanded"
-)
-
-st.markdown(
-   '''
-    <style>
-       
-        body {
-            font-family: Arial, sans-serif;
-            
-            
-        }
-        h1, h2, h3, h4 {
-            color: #1f4287;
-        }
-        .stMarkdown h1 {
-            font-size: 2.5em;
-            margin: 0.5em 0;
-        }
-        .stMarkdown h2 {
-            font-size: 2em;
-            margin: 0.5em 0;
-        }
-        .stMarkdown h3 {
-            font-size: 1.5em;
-            margin: 0.5em 0;
-        }
-        .stMarkdown p {
-            font-size: 1.2em;
-            margin: 0.5em 0;
-        }
-        /* You can also add custom styles to specific elements */
-        /* For example, you can add a background color to the input field */
-        /* and change the color of the submit button */
-        .stTextInput {
-            background-color: #f2f2f2;
-        }
-        .stButton {
-            background-color: #1f4287;
-            color: white;
-        }
-    </style>''', unsafe_allow_html=True
-    
 )
 
 st.title("Movie Recommendation System")
