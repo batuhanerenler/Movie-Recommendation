@@ -78,7 +78,7 @@ st.markdown(
     <style>
         background { 
             rgb(2,0,36);
-            {
+        }
         background { 
             linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 22%, rgba(0,212,255,1) 100%);
         }
