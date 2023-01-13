@@ -68,7 +68,7 @@ def get_recommendations(title,cosine_sim=cosine_sim):
 
 # Use Streamlit to create the UI
 # Add CSS styles
-st.beta_set_page_config(
+st.set_page_config(
     page_title="Movie Recommendation System",
     page_icon=":movie_camera:",
     layout="wide",
