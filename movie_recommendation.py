@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-st.markdown("<body style='background: linear-gradient(to right, #000046, #1cb5e0);'>", unsafe_allow_html=True)
+
 
 df1 = pd.read_csv('tmdb_5000_credits.csv')
 df2 = pd.read_csv('tmdb_5000_movies.csv')
@@ -75,6 +75,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+st.markdown("<body style='background: linear-gradient(to right, #000046, #1cb5e0);'>", unsafe_allow_html=True)
 
 st.title("Movie Recommendation System")
 
