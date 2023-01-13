@@ -4,7 +4,6 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-@st.cache  
 df1 = pd.read_csv('tmdb_5000_credits.csv')
 df2 = pd.read_csv('tmdb_5000_movies.csv')
 
