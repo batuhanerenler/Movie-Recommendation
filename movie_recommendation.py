@@ -25,7 +25,38 @@ cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 # Create a reverse index of movie titles
 indices = pd.Series(df2.index, index=df2['title']).drop_duplicates()
 
-# Define the recommendation function
+from ast import literal_eval
+features = ['cast', 'crew', 'keywords', 'genres']
+for feature in features:
+    df2[feature] = df2[feature].apply(literal_eval)
+
+def get_director(x):
+    for i in x:
+        if i['job'] == 'Director':
+            return i['name']
+    return np.nan
+
+# Returns the list top 3 elements or entire list; whichever is more.
+def get_list(x):
+    if isinstance(x, list):
+        names = [i['name'] for i in x]
+        #Check if more than 3 elements exist. If yes, return only first three. If no, return entire list.
+        if len(names) > 3:
+            names = names[:3]
+        return names
+
+    #Return empty list in case of missing/malformed data
+    return []
+
+# Define new director, cast, genres and keywords features that are in a suitable form.
+df2['director'] = df2['crew'].apply(get_director)
+
+features = ['cast', 'keywords', 'genres']
+for feature in features:
+    df2[feature] = df2[feature].apply(get_list)
+    # Define the recommendation function
+    
+    
 def get_recommendations(title,cosine_sim=cosine_sim):
     idx = indices[title]
     sim_scores = list(enumerate(cosine_sim[idx]))
